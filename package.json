@@ -1,0 +1,28 @@
+{
+  "name": "bob-de-plant",
+  "version": "1.0.0",
+  "description": "Bob de plant",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jelmie/bob-de-plant.git"
+  },
+  "keywords": [
+    "Plant-ladd"
+  ],
+  "author": "HJ Westra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jelmie/bob-de-plant/issues"
+  },
+  "homepage": "https://github.com/Jelmie/bob-de-plant#readme",
+  "dependencies": {
+    "browser-sync": "^2.27.7",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.43.4"
+  }
+}
