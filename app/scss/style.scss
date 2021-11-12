@@ -1,0 +1,46 @@
+$font-stack:    Helvetica, sans-serif;
+$dawn: #BDC3B9;
+$industrial: #5B5A59;
+$yellow: #F5CD11;
+$blueberry: #596F84;
+$green: #6AB144;
+$purple: #73539B ;
+$teal: #6BAA99;
+$orange: #ED6D23;
+
+@use '_reset';
+
+html {
+  min-height:100%;
+}
+
+body {
+  font-family: proxima-nova, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 16px;
+  min-height:100%;
+}
+
+#app   {
+    background-color: $dawn;
+    width: 100%;
+    min-height: 812px;
+
+}
+
+.boldtext {
+    color:#ffffff;
+    font-family: proxima-nova, sans-serif;
+    font-size: 3.75em;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 75px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.boldtext > a {
+  border-bottom:1em;
+  border-color:$orange;
+}
