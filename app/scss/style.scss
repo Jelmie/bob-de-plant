@@ -5,8 +5,9 @@ $yellow: #F5CD11;
 $blueberry: #596F84;
 $green: #6AB144;
 $purple: #73539B ;
-$teal: #6BAA99;
-$orange: #ED6D23;
+$teal: #c5dfdb;
+$orange: #e89555;
+$beige: #ebe4cd;
 
 @use '_reset';
 
@@ -26,21 +27,41 @@ body {
     background-color: $dawn;
     width: 100%;
     min-height: 812px;
-
 }
 
 .boldtext {
-    color:#ffffff;
     font-family: proxima-nova, sans-serif;
-    font-size: 3.75em;
+    font-size: 2em;
     font-style: normal;
     font-weight: 800;
     line-height: 75px;
     letter-spacing: 0em;
-    text-align: left;
+    text-align: center;
 }
 
 .boldtext > a {
   border-bottom:1em;
   border-color:$orange;
+}
+
+.boi {
+  background-color:$beige;
+}
+
+.line {
+  stroke:$teal;
+  stroke-width: 2em;
+}
+
+.endLine {
+  stroke:$industrial;
+  stroke-width: 1em;
+}
+
+.label {
+  font-size:0.5em;
+}
+
+#popupContainer {
+  display:none;
 }

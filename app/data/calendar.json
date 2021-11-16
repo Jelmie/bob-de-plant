@@ -1,0 +1,122 @@
+[
+ {
+   "Naam": "MOC Rej",
+   "Datum": "15-11-2021",
+   "Start": "8:15",
+   "Einde": "8:45",
+   "Locatie": "Brouwerij",
+   "Alleen": 1,
+   "Locked": 1,
+   "Notities": ""
+ },
+ {
+   "Naam": "BDA uur",
+   "Datum": "15-11-2021",
+   "Start": "11:00",
+   "Einde": "12:00",
+   "Locatie": "",
+   "Alleen": 1,
+   "Locked": 0,
+   "Notities": ""
+ },
+ {
+   "Naam": "Vrijgave",
+   "Datum": "15-11-2021",
+   "Start": "12:00",
+   "Einde": "12:30",
+   "Locatie": "",
+   "Alleen": 1,
+   "Locked": 0,
+   "Notities": ""
+ },
+ {
+   "Naam": "Emails & stuff",
+   "Datum": "15-11-2021",
+   "Start": "16:00",
+   "Einde": "17:00",
+   "Locatie": "",
+   "Alleen": 1,
+   "Locked": 0,
+   "Notities": ""
+ },
+ {
+   "Naam": "Team Brand Bierbrouwerij",
+   "Datum": "15-11-2021",
+   "Start": "8:30",
+   "Einde": "17:00",
+   "Locatie": "",
+   "Alleen": 0,
+   "Locked": 0,
+   "Notities": ""
+ },
+ {
+   "Naam": "Word Quality",
+   "Datum": "15-11-2021",
+   "Start": "16:00",
+   "Einde": "17:00",
+   "Locatie": "Microsoft Teams",
+   "Alleen": 0,
+   "Locked": 1,
+   "Notities": ""
+ },
+ {
+   "Naam": "BDA uur",
+   "Datum": "16-11-2021",
+   "Start": "11:00",
+   "Einde": "12:00",
+   "Locatie": "",
+   "Alleen": 1,
+   "Locked": 0,
+   "Notities": ""
+ },
+ {
+   "Naam": "World Quality",
+   "Datum": "16-11-2021",
+   "Start": "11:00",
+   "Einde": "12:00",
+   "Locatie": "Microsoft Teams",
+   "Alleen": 0,
+   "Locked": 1,
+   "Notities": ""
+ },
+ {
+   "Naam": "Billa Sarah & Nils",
+   "Datum": "16-11-2021",
+   "Start": "13:00",
+   "Einde": "14:00",
+   "Locatie": "Kamer Nils",
+   "Alleen": 0,
+   "Locked": 1,
+   "Notities": ""
+ },
+ {
+   "Naam": "HNS Quality",
+   "Datum": "16-11-2021",
+   "Start": "14:00",
+   "Einde": "15:00",
+   "Locatie": "Microsoft Teams",
+   "Alleen": 0,
+   "Locked": 1,
+   "Notities": ""
+ },
+ {
+   "Naam": "PQ overleg Week 3 - Deployment",
+   "Datum": "16-11-2021",
+   "Start": "15:00",
+   "Einde": "16:00",
+   "Locatie": "Microsoft Teams",
+   "Alleen": 0,
+   "Locked": 1,
+   "Notities": ""
+ },
+ {
+   "Naam": "Emails & vorbereiding",
+   "Datum": "16-11-2021",
+   "Start": "16:00",
+   "Einde": "17:00",
+   "Locatie": "Kantoor sarah",
+   "Alleen": 1,
+   "Locked": 0,
+   "Notities": ""
+ }
+]
