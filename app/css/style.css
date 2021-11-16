@@ -66,8 +66,10 @@ body {
 
 #app {
   background-color: #BDC3B9;
-  width: 100%;
+  width: 375px;
   min-height: 812px;
+  margin: auto;
+  overflow: scroll;
 }
 
 .boldtext {
@@ -104,5 +106,21 @@ body {
 }
 
 #popupContainer {
+  display: contents;
+}
+
+#pContainer {
+  position: relative;
+  margin: auto;
+  width: 300px;
+  height: 100px;
+  background-color: #73539B;
+  z-index: 1000;
   display: none;
+}
+
+.plantElement {
+  position: relative;
+  width: 100px;
+  height: 100px;
 }
