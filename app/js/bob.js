@@ -1,13 +1,12 @@
-
-//draw the plantboid
-
-
-
+var bobsEmtion = "angry"
+document.onLoad = d3.select("#app").append("div").attr("id","test");
 
 //plantDraw function
-function plantDraw(pNum, emote, name)   {   
-    pContainer = d3.select("#app")
-    .append("div")
+function plantDraw(pNum, emote, name)   { 
+    pContainer = d3.select("#test > *")
+    .remove()
+    pContainer = d3.select("#test")
+    pContainer.append("div")
         .attr("id",name)
 
     pContainer.attr("class", "pContainer pType"+pNum)
@@ -25,4 +24,4 @@ function plantDraw(pNum, emote, name)   {
     .attr("class", "plantElement pEmote")
 }   
 
-document.onload = plantDraw(1,"purring","henk")
+document.onload = plantDraw(1,bobsEmtion,"henk")

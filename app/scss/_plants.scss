@@ -1,10 +1,10 @@
 .pContainer {
-    position:relative;
+    position:fixed;
     margin:auto;
-    z-index:10;
+    z-index:1000;
     width:5em;
     height:15em;
-    float:left;
+    right:0;
 }
 
 

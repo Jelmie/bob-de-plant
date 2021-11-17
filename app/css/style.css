@@ -53,12 +53,12 @@ table {
 }
 
 .pContainer {
-  position: relative;
+  position: fixed;
   margin: auto;
-  z-index: 10;
+  z-index: 1000;
   width: 5em;
   height: 15em;
-  float: left;
+  right: 0;
 }
 
 .plantElement {
@@ -155,7 +155,6 @@ body {
 #app {
   background-color: #BDC3B9;
   width: 375px;
-  min-height: 812px;
   margin: auto;
   overflow: scroll;
 }
