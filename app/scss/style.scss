@@ -10,7 +10,7 @@ $orange: #e89555;
 $beige: #ebe4cd;
 
 @use '_reset';
-
+@use "_plants.scss";
 // html {
  
 // }
@@ -68,40 +68,4 @@ body {
   display:contents;
 }
 
-#pContainer {
-    position:fixed;
-    margin:auto;
-    width:100px;
-    height:200px;
-    z-index:10;
-    bottom:50%;
-}
 
-#pContainer {
-//Plants
-.plantElement {
-    float:left;
-    position:absolute;
-    overflow:visible;
-}
-
-.pPot {
-    z-index: 1;
-    bottom:0px;
-  }
-  
-.pPlant {
-    z-index: 3;
-    bottom: 30px;
-    width:150px;
-    left:-20px;
-  }
-  
-.pEmote {
-    z-index: 2;
-    bottom:10px;
-    left:5px;
-    width:60px;
-    height:60px;
-  }
-}

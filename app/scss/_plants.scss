@@ -1,0 +1,137 @@
+.pContainer {
+    position:relative;
+    margin:auto;
+    z-index:10;
+    width:5em;
+    height:15em;
+    float:left;
+}
+
+
+//Plants
+.plantElement {
+    float:left;
+    position:absolute;
+    overflow:visible;
+}
+
+.pPot {
+    bottom:0;
+    z-index: 1;
+    width:5em;
+  }
+  
+.pPlant {
+    z-index: 3;
+  }
+  
+.pEmote {
+    z-index: 2;
+    width:3em;
+    margin:auto;
+  }
+
+
+//Plant 1
+.pType1 {
+    .pPot {
+    }
+
+    .pPlant {
+        bottom: 4.7em;
+        left:-1.5em;
+        height:10em;
+        z-index:0;
+    }
+
+    .pEmote {
+        bottom:1em;
+    }
+}
+
+//Plant 2
+.pType2 {
+    .pPot {
+    }
+
+    .pPlant {
+        bottom: 3em;
+        height:10em;
+        z-index:0;
+        left:-1em;
+    }
+
+    .pEmote {
+        bottom:1em;
+    }
+}
+
+//Plant 3
+.pType3 {
+    .pPot {
+    }
+
+    .pPlant {
+        bottom: -1.3em;
+        height:10em;
+        left:-3em;
+    }
+
+    .pEmote {
+        bottom:2em;
+        left:1em;
+    }
+}
+
+//Plant 4
+.pType4 {
+    .pPot {
+    }
+
+    .pPlant {
+        bottom: 2em;
+        height:6em;
+        left:-0.5em;
+    }
+
+    .pEmote {
+        bottom:1em;
+    }
+}
+
+//Plant 5
+.pType5 {
+    .pPot {
+    }
+
+    .pPlant {
+        bottom: 3em;
+        height:15em;
+        left:-3.5em;
+        
+        z-index:0;
+    }
+    .pEmote {
+        bottom:0.8em;
+        left:1em;
+    }
+}
+
+//Plant 6
+.pType6 {
+    .pPot {
+    }
+
+    .pPlant {
+        bottom: 3em;
+        height:10em;
+        left:-2em;
+        
+        z-index:0;
+    }
+
+    .pEmote {
+        bottom:1em;
+        left:1em;
+    }
+}

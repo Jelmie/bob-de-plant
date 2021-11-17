@@ -52,6 +52,98 @@ table {
   border-spacing: 0;
 }
 
+.pContainer {
+  position: relative;
+  margin: auto;
+  z-index: 10;
+  width: 5em;
+  height: 15em;
+  float: left;
+}
+
+.plantElement {
+  float: left;
+  position: absolute;
+  overflow: visible;
+}
+
+.pPot {
+  bottom: 0;
+  z-index: 1;
+  width: 5em;
+}
+
+.pPlant {
+  z-index: 3;
+}
+
+.pEmote {
+  z-index: 2;
+  width: 3em;
+  margin: auto;
+}
+
+.pType1 .pPlant {
+  bottom: 4.7em;
+  left: -1.5em;
+  height: 10em;
+  z-index: 0;
+}
+.pType1 .pEmote {
+  bottom: 1em;
+}
+
+.pType2 .pPlant {
+  bottom: 3em;
+  height: 10em;
+  z-index: 0;
+  left: -1em;
+}
+.pType2 .pEmote {
+  bottom: 1em;
+}
+
+.pType3 .pPlant {
+  bottom: -1.3em;
+  height: 10em;
+  left: -3em;
+}
+.pType3 .pEmote {
+  bottom: 2em;
+  left: 1em;
+}
+
+.pType4 .pPlant {
+  bottom: 2em;
+  height: 6em;
+  left: -0.5em;
+}
+.pType4 .pEmote {
+  bottom: 1em;
+}
+
+.pType5 .pPlant {
+  bottom: 3em;
+  height: 15em;
+  left: -3.5em;
+  z-index: 0;
+}
+.pType5 .pEmote {
+  bottom: 0.8em;
+  left: 1em;
+}
+
+.pType6 .pPlant {
+  bottom: 3em;
+  height: 10em;
+  left: -2em;
+  z-index: 0;
+}
+.pType6 .pEmote {
+  bottom: 1em;
+  left: 1em;
+}
+
 body {
   font-family: proxima-nova, sans-serif;
   font-weight: 800;
@@ -102,36 +194,4 @@ body {
 
 #popupContainer {
   display: contents;
-}
-
-#pContainer {
-  position: fixed;
-  margin: auto;
-  width: 100px;
-  height: 200px;
-  z-index: 10;
-  bottom: 50%;
-}
-
-#pContainer .plantElement {
-  float: left;
-  position: absolute;
-  overflow: visible;
-}
-#pContainer .pPot {
-  z-index: 1;
-  bottom: 0px;
-}
-#pContainer .pPlant {
-  z-index: 3;
-  bottom: 30px;
-  width: 150px;
-  left: -20px;
-}
-#pContainer .pEmote {
-  z-index: 2;
-  bottom: 10px;
-  left: 5px;
-  width: 60px;
-  height: 60px;
 }
