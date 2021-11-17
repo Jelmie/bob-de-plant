@@ -28,27 +28,40 @@ d3.select("#app")
     .attr("id","titlebox")
     .text("Ahoy")
 
-//draw the plantboii
- pContainer =   d3.select("#app")
+//draw the plantboid
+ pContainer = d3.select("#app")
         .append("div")
-        .attr("id","#pContainer")
+        .attr("id","pContainer")
+
+//plantDraw 1
+ function plantDraw1()   {   
     pContainer.append("img")
         .attr("src", "gfx/plants/plant-1.svg")
-        .attr("class", "plantElement")
-        // .attr("width", "100")
-        // .attr("height", "100")
+        .attr("class", "plantElement pPlant")
+
     pContainer.append("img")
         .attr("src", "gfx/pots/pot-1.svg")
-        .attr("class", "plantElement")
-        // .attr("width", "100")
-        // .attr("height", "100")
+        .attr("class", "plantElement pPot")
 
     pContainer.append("img")
         .attr("src", "gfx/emotes/sad.svg")
-        .attr("class", "plantElement")
-        // .attr("width", "100")
-        // .attr("height", "100")
-      
+        .attr("class", "plantElement pEmote")
+ }   
+
+ //plantDraw 2
+ function plantDraw2()   {   
+    pContainer.append("img")
+        .attr("src", "gfx/plants/plant-2.svg")
+        .attr("class", "plantElement pPlant")
+
+    pContainer.append("img")
+        .attr("src", "gfx/pots/pot-2.svg")
+        .attr("class", "plantElement pPot")
+
+    pContainer.append("img")
+        .attr("src", "gfx/emotes/sad.svg")
+        .attr("class", "plantElement pEmote")
+ }   
 
 //create popup block
 var popup = d3.select("#app")
@@ -58,11 +71,13 @@ var popup = d3.select("#app")
 //change the conatiner to the thing just made
 d3.select("#popupContainer")
     .append("div")
-    d3.select("#popupContainer")
+d3.select("#popupContainer")
     .append("button")
         .attr("class","clicky")
         .attr("id", "henk")
         .text("switch")
+
+        
 
 //Click events
 
@@ -159,6 +174,7 @@ var svg = d3.select("#app")
                         .attr("x2", function(d) { 
                             return x(d.Einde);
                         })//set x2
+                        .attr("stroke-width",y.bandwidth() )
                     g.append("text")//Add the text
                         .text(function(d){ return d.Naam})//Fill in the text
                         .attr("class", "label")//Add the label
@@ -216,7 +232,6 @@ var svg = d3.select("#app")
         //Workhours domain
         x.domain([parseTime("8:00"), parseTime("12:00")])
         
-        
         //set height for this block
         y.range([height/9*3,height/9*2])
     //Create the Lines -- Use a var for easier nesting?
@@ -238,6 +253,7 @@ var svg = d3.select("#app")
                     .attr("x2", function(d) { 
                         return x(d.Einde);
                     })//set x2
+                    .attr("stroke-width",y.bandwidth() )
                 g.append("text")//Add the text
                     .text(function(d){ return d.Naam})//Fill in the text
                     .attr("class", "label")//Add the label
@@ -245,10 +261,6 @@ var svg = d3.select("#app")
                     .attr("x", function(d) { return x(d.Start)})//Set x
             .exit()  
     ;
-        
-        // add the y Axis
-        // svg.append("g")
-        //     .call(d3.axisLeft(y));
 
         // add the x Axis
         svg.append("g")
@@ -291,6 +303,7 @@ var g =  svg //create a variable g to enter multiple children
                 .attr("x2", function(d) { 
                     return x(d.Einde);
                 })//set x2
+                .attr("stroke-width",y.bandwidth() )
             g.append("text")//Add the text
                 .text(function(d){ return d.Naam})//Fill in the text
                 .attr("class", "label")//Add the label
@@ -298,10 +311,6 @@ var g =  svg //create a variable g to enter multiple children
                 .attr("x", function(d) { return x(d.Start)})//Set x
         .exit()  
 ;
-    
-    // add the y Axis
-    // svg.append("g")
-    //     .call(d3.axisLeft(y));
 
     // add the x Axis
     svg.append("g")
@@ -346,6 +355,7 @@ var g =  svg //create a variable g to enter multiple children
                 .attr("x2", function(d) { 
                     return x(d.Einde);
                 })//set x2
+                .attr("stroke-width",y.bandwidth() )
             g.append("text")//Add the text
                 .text(function(d){ return d.Naam})//Fill in the text
                 .attr("class", "label")//Add the label
@@ -354,12 +364,12 @@ var g =  svg //create a variable g to enter multiple children
 
         .exit()  
 
-        // svg.append("line") 
-        //     .attr("class","endLine")
-        //     .attr("x1","200")
-        //     .attr("x2","300")
-        //     .attr("y1",height/9*6)
-        //     .attr("y2",height/9*9)
+        svg.append("line") 
+            .attr("class","endLine")
+            .attr("x1","200")
+            .attr("x2","300")
+            .attr("y1",height/9*6)
+            .attr("y2",height/9*9)
         
     // add the y Axis
     // svg.append("g")
@@ -376,3 +386,4 @@ var g =  svg //create a variable g to enter multiple children
 
 //Run the draw function once
 document.onload = drawGraphs()
+document.onload = plantDraw2()

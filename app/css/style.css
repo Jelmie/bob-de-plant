@@ -52,10 +52,6 @@ table {
   border-spacing: 0;
 }
 
-html {
-  min-height: 100%;
-}
-
 body {
   font-family: proxima-nova, sans-serif;
   font-weight: 800;
@@ -93,7 +89,6 @@ body {
 
 .line {
   stroke: #c5dfdb;
-  stroke-width: 2em;
 }
 
 .endLine {
@@ -110,17 +105,33 @@ body {
 }
 
 #pContainer {
-  position: relative;
+  position: fixed;
   margin: auto;
-  width: 300px;
-  height: 100px;
-  background-color: #73539B;
-  z-index: 1000;
-  display: none;
+  width: 100px;
+  height: 200px;
+  z-index: 10;
+  bottom: 50%;
 }
 
-.plantElement {
-  position: relative;
-  width: 100px;
-  height: 100px;
+#pContainer .plantElement {
+  float: left;
+  position: absolute;
+  overflow: visible;
+}
+#pContainer .pPot {
+  z-index: 1;
+  bottom: 0px;
+}
+#pContainer .pPlant {
+  z-index: 3;
+  bottom: 30px;
+  width: 150px;
+  left: -20px;
+}
+#pContainer .pEmote {
+  z-index: 2;
+  bottom: 10px;
+  left: 5px;
+  width: 60px;
+  height: 60px;
 }
