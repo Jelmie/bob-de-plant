@@ -31,34 +31,40 @@ var menuContainer = d3.select("#app")
 var menu = d3.select("#navigation")
     .append("ul");
  
-    
  //Create click events 
- document.onload = createMenuItem("Home", "homeButton"),createMenuItem("Happy Bob", "happyBob");
+ document.onload =  createMenuItem("Home", "homeButton"),
+                    createMenuItem("Happy Bob", "happyBob"),
+                    createMenuItem("Sad Bob", "sadBob");
+                    createMenuItem("Planner","planner")
+                    createMenuItem("Active","active")
 
-    
 //change the conatiner to the thing just made
 
 d3.select("#popupContainer")
-    .append("button")
-        .attr("class","clicky")
-        .attr("id", "switcher")
-        .text("switch")
 
-//Click events
-document.getElementById("switcher").onclick = function(){
-    planner = !planner;
-    active = !active;
-    drawGraphs();
-}
+//Click event
 
 // Make bob smile 
-document.getElementById("happyBob").onclick = function(){
-    bobsEmotion = "smiling"
-    
-    plantDraw(1,bobsEmtion,"henk")
+
+document.getElementById("happyBob").onclick= function() {
+    bobsEmotion = "purring"
+    plantDraw(1,bobsEmotion,"henk")
+}
+
+document.getElementById("sadBob").onclick= function() {
+    bobsEmotion = "sad"
+    plantDraw(1,bobsEmotion,"henk")
+}
+
+document.getElementById("planner").onclick= function() {
+    drawPlanner();
+}
+
+document.getElementById("active").onclick= function() {
+    drawActive();
+}
 
     
-}
 
 
 

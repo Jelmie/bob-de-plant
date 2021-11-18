@@ -10,8 +10,7 @@ var margin = {
 var width = 375 - margin.left - margin.right;
 var height = 600 - margin.top - margin.bottom;
 
-var planner = false;
-var active = true;
+
 
 var timelines = 3; //Nfalsember of timelines set
 var workhoursStart = "08:00"//WorkhoursStart set

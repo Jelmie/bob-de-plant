@@ -14,10 +14,10 @@ var x = d3.scaleTime()
 //Parse the selected date 
 selectedDate = parseDate(selectedDate);
 
-//THE DRAWING FUNCTION
-function drawGraphs() {
+//THE DRAWING FUNCTION------------------------------------------------
+function drawActive() {
 
-if (active === true) {
+
     d3.select("#titlebox")
     .text("Aan het werk")
 
@@ -27,7 +27,7 @@ if (active === true) {
 //canvas setup
 var svg = d3.select("#app")
   .append("svg")
-    .attr("width", 900 + margin.left + margin.right)
+    .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .attr("class", "boi")
   .append("g")
@@ -47,7 +47,7 @@ var svg = d3.select("#app")
             d.Alleen = +d.Alleen;
         })
     
-        //---------------------------------First Block-----------------------------------//
+        //---------------------------------Planner-----------------------------------//
         // Scale the range of the data in the domains
             y.domain(data.map(function(d) { return d.Locked; }));
             //Planned domain
@@ -60,8 +60,8 @@ var svg = d3.select("#app")
             // )));
     
             //Workhours domain
-            x.domain([parseTime("8:00"), parseTime("12:00")])
-            console.log(y.domain);
+            x.domain([parseTime("8:00"), parseTime("21:00")])
+                x.range([0,width])
             //set height for this block
             y.range([height,0])
         //Create the Lines -- Use a var for easier nesting?
@@ -71,12 +71,15 @@ var svg = d3.select("#app")
             .selectAll(".line")
             .data(data)
                 .enter()
+                .filter(function(d) { return d.close = selectedDate })
                     .append("g")//Create groups for all
                         .attr("class", "event")//Add class to group
                     g.append("line")//Add the line
                         .attr("class", "line")//Set Class
                         .attr("y1", function(d) { return y(d.Locked)+ y.bandwidth()/2; })//Set y1
                         .attr("y2", function(d) { return y(d.Locked)+ y.bandwidth()/2; })//Set y2
+
+                        
                         .attr("x1", function(d) { 
                             return x(d.Start);
                         })//set x1
@@ -94,14 +97,14 @@ var svg = d3.select("#app")
 })    
 }
 
+
  // Load the data and do magic
 //Check whats selected
-if (planner === true) {
+function drawPlanner() {
     //clear graph
     d3.selectAll("#app > svg").remove();
     d3.select("#titlebox")
         .text("Planner")
-
 
         //canvas setup
 var svg = d3.select("#app")
@@ -150,6 +153,8 @@ var svg = d3.select("#app")
         .selectAll(".line")
         .data(data)
             .enter()
+            
+            .filter(function(d) { return d.close = selectedDate })
                 .append("g")//Create groups for all
                     .attr("class", "event")//Add class to group
                 g.append("line")//Add the line
@@ -200,8 +205,11 @@ var g =  svg //create a variable g to enter multiple children
     .selectAll(".line")
     .data(data)
         .enter()
+        
+                // .filter(function(d) { return d.close = selectedDate })
             .append("g")//Create groups for all
                 .attr("class", "event")//Add class to group
+                
             g.append("line")//Add the line
                 .attr("class", "line")//Set Class
                 .attr("y1", function(d) { return y(d.Locked)+ y.bandwidth()/2; })//Set y1
@@ -251,9 +259,11 @@ var g =  svg //create a variable g to enter multiple children
         .attr("class", "lines3")
     .selectAll(".line")
     .data(data)
+    
         .enter()
             .append("g")//Create groups for all
                 .attr("class", "event")//Add class to group
+                
             g.append("line")//Add the line
                 .attr("class", "line")//Set Class
                 .attr("y1", function(d) { return y(d.Locked)+ y.bandwidth()/2; })//Set y1
@@ -266,19 +276,20 @@ var g =  svg //create a variable g to enter multiple children
                 })//set x2
                 .attr("stroke-width",y.bandwidth() )
             g.append("text")//Add the text
+            
                 .text(function(d){ return d.Naam})//Fill in the text
                 .attr("class", "label")//Add the label
                 .attr("y", function(d) { return y(d.Locked)+ y.bandwidth()/2; })//Set y
                 .attr("x", function(d) { return x(d.Start)})//Set x
 
         .exit()  
-
-        svg.append("line") 
-            .attr("class","endLine")
-            .attr("x1","200")
-            .attr("x2","300")
-            .attr("y1",height/9*6)
-            .attr("y2",height/9*9)
+ //Draw Endtime
+        // svg.append("line") 
+        //     .attr("class","endLine")
+        //     .attr("x1","200")
+        //     .attr("x2","300")
+        //     .attr("y1",height/9*6)
+        //     .attr("y2",height/9*9)
         
     // add the y Axis
     // svg.append("g")
@@ -291,7 +302,7 @@ var g =  svg //create a variable g to enter multiple children
 
     });
 }
-}
+
 
 //Run the draw function once
-document.onload = drawGraphs()
+document.onload = drawActive()
