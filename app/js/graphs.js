@@ -305,4 +305,4 @@ var g =  svg //create a variable g to enter multiple children
 
 
 //Run the draw function once
-document.onload = drawActive()
+// document.onload = drawActive()

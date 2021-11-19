@@ -58,7 +58,20 @@ table {
   z-index: 1000;
   width: 5em;
   height: 15em;
-  right: 0;
+  top: 0em;
+  right: 2em;
+}
+
+.pSmall {
+  font-size: 1em;
+}
+
+.pMedium {
+  font-size: 2em;
+}
+
+.pLarge {
+  font-size: 3em;
 }
 
 .plantElement {

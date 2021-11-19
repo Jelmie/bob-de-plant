@@ -1,8 +1,9 @@
 var bobsEmotion = "angry"
+var bobSize = "Medium"
 document.onLoad = d3.select("#app").append("div").attr("id","test");
 
 //plantDraw function
-function plantDraw(pNum, emote, name)   { 
+function plantDraw(pNum, emote, name, size)   { 
     console.log(bobsEmotion)
     d3.selectAll("#app > #test > *").remove();
 
@@ -10,7 +11,7 @@ function plantDraw(pNum, emote, name)   {
     pContainer.append("div")
         .attr("id",name)
 
-    pContainer.attr("class", "pContainer pType"+pNum)
+    pContainer.attr("class", "pContainer pType"+pNum + " p"+size)
         
     pContainer.append("img")
     .attr("src", "gfx/plants/plant-"+ pNum +".svg")
@@ -25,4 +26,10 @@ function plantDraw(pNum, emote, name)   {
     .attr("class", "plantElement pEmote")
 }   
 
-document.onload = plantDraw(1,bobsEmotion,"henk")
+document.onload = plantDraw(pPot,bobsEmotion,"henk",bobSize)
+
+
+// //Bob actions
+// bobWantsAttention function() {
+    .text("Stop eens met werken!")
+// }
