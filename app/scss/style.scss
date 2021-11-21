@@ -1,3 +1,7 @@
+
+
+
+
 $font-stack:    Helvetica, sans-serif;
 $dawn: #BDC3B9;
 $industrial: #5B5A59;
@@ -9,7 +13,7 @@ $teal: #c5dfdb;
 $orange: #e89555;
 $beige: #ebe4cd;
 
-@use '_reset';
+@use "_reset";
 @use "_plants.scss";
 // html {
  
@@ -39,6 +43,7 @@ body {
     line-height: 75px;
     letter-spacing: 0em;
     text-align: center;
+
 }
 
 .boldtext > a {
@@ -79,4 +84,30 @@ body {
 .menuItem {
   display:inline-block;
   padding: 0.2em;
+}
+
+
+//Text-bubble
+.speech-bubble {
+	position: fixed;
+	background: $purple;
+	border-radius: .4em;
+  left:10em;
+  padding:0.2em;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	bottom:0.1em;
+	width: 0;
+	height: 0;
+	border: 0.656em solid transparent;
+	border-left-color: $industrial;
+	border-right: 0;
+	border-bottom: 0;
+	margin-top: -0.328em;
+	margin-right: -0.656em;
+    
 }

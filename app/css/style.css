@@ -58,8 +58,8 @@ table {
   z-index: 1000;
   width: 5em;
   height: 15em;
-  top: 3em;
-  right: 2em;
+  bottom: 0em;
+  right: 0em;
 }
 
 .pSmall {
@@ -219,4 +219,27 @@ body {
 .menuItem {
   display: inline-block;
   padding: 0.2em;
+}
+
+.speech-bubble {
+  position: fixed;
+  background: #73539B;
+  border-radius: 0.4em;
+  left: 10em;
+  padding: 0.2em;
+}
+
+.speech-bubble:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0.1em;
+  width: 0;
+  height: 0;
+  border: 0.656em solid transparent;
+  border-left-color: #5B5A59;
+  border-right: 0;
+  border-bottom: 0;
+  margin-top: -0.328em;
+  margin-right: -0.656em;
 }

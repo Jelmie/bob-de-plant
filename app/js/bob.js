@@ -24,8 +24,15 @@ function plantDraw(pNum, emote, name, size)   {
     .attr("class", "plantElement pEmote")
 }   
 
-document.onload = plantDraw(bobType,bobsEmotion,"henk",bobSize)
+function bobTalk() {
+    d3.select("#test")
+    .append("div")
+    .attr("class", "speech-bubble")
+    .text("Hi!")
+}
 
+document.onload = plantDraw(bobType,bobsEmotion,"henk",bobSize)
+document.onload = bobTalk()
 
 // //Bob actions
 // bobWantsAttention function() {
