@@ -18,6 +18,7 @@ var workhoursEnd = "21:00" //WorkhoursEnd set
 var selectedDate = "16-11-2021"; //Select the current date
 var pomodoro = 0; //using pomodoro
 
-var pEmotion = "content";
-var pPot = "4";
-var pPlant = "4";
+var bobType = 1
+var bobsEmotion = "angry"
+var bobSize = "Small"
+

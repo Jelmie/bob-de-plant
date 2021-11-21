@@ -1,19 +1,17 @@
-//create Title card
-d3.select("#app")
-    .append("h2")
-    .attr("class","boldtext")
-    .attr("id","titlebox")
-    .text("Ahoy")
-
-//create popup block
-var popup = d3.select("#app")
-    .append("div")
-        .attr("id", "popupContainer")
- 
  //Create menu
+  //Create menu-item
+function createMenuCategory(titel, id, parent) {
+    var menuList = d3.select("#menuContainer > #"+parent) 
+    .append("li")
+    .append("ul")
+        .attr("class", "menuItem")
+        .attr("id", id)
+        .text(titel)            
+}
+
  //Create menu-item
-function createMenuItem(titel, id) {
-    var menuList = d3.select("#navigation > ul") 
+function createMenuItem(titel, id, parent) {
+    var menuList = d3.select("#"+parent) 
     .append("li")
         .attr("class", "menuItem")
         .append("a")
@@ -25,76 +23,181 @@ function createMenuItem(titel, id) {
 //create menu container
 var menuContainer = d3.select("#app")
     .append("nav")
-        .attr("id", "navigation")
+        .attr("id", "menuContainer")
         .attr("role", "navigation");
 
-var menu = d3.select("#navigation")
-    .append("ul");
- 
- //Create click events 
- document.onload =  createMenuItem("Home", "homeButton"),
-                    createMenuItem("Happy Bob", "happyBob"),
-                    createMenuItem("Sad Bob", "sadBob"),
-                    createMenuItem("Planner","planner"),
-                    createMenuItem("Active","active"),
-                    createMenuItem("B1","b1"),
-                    createMenuItem("B2","b2"),
-                    createMenuItem("B3","b3"),
-                    createMenuItem("B4","b4"),
-                    createMenuItem("B5","b5"),
-                    createMenuItem("B6","b6")
+//create menu header   
+menuContainer.append("h4")
+            .attr("class", "debug-menu")
+            .text("Debug menu")
+
+//create menu header   
+menuContainer.append("ul")
+            .attr("id", "menuMain")
+
+// menu.append(ul)
+
+ //Create menu items
+ document.onload =  createMenuItem("Home", "homeButton", "menuMain"),   
+                    createMenuItem("Planner","planner", "menuMain"),
+                    createMenuItem("Active","active", "menuMain"),
+                    createMenuCategory("SelectDate", "selectDate", "menuMain"),
+                    createMenuItem("15-11-2021","15-11-2021", "selectDate"),
+                    createMenuItem("16-11-2021","16-11-2021", "selectDate"),
+                    createMenuCategory("BobType", "bobType", "menuMain"),
+                    createMenuItem("B1","b1", "bobType"),
+                    createMenuItem("B2","b2", "bobType"),
+                    createMenuItem("B3","b3", "bobType"),
+                    createMenuItem("B4","b4", "bobType"),
+                    createMenuItem("B5","b5", "bobType"),
+                    createMenuItem("B6","b6", "bobType"),
+                    createMenuCategory("BobEmotion", "bobEmotion", "menuMain"),
+                    createMenuItem("Angry", "angryBob", "bobEmotion"),
+                    createMenuItem("Confused", "confusedBob", "bobEmotion"),
+                    createMenuItem("Content", "contentBob", "bobEmotion"),
+                    createMenuItem("Happy", "happyBob", "bobEmotion"),
+                    createMenuItem("Joy", "joyBob", "bobEmotion"),
+                    createMenuItem("Pleased", "pleasedBob", "bobEmotion"),
+                    createMenuItem("Purring", "purringBob", "bobEmotion"),
+                    createMenuItem("Sad", "sadBob", "bobEmotion"),
+                    createMenuItem("Sceptical", "scepticalBob", "bobEmotion"),
+                    createMenuItem("Smiling", "smilingBob", "bobEmotion"),
+                    createMenuItem("Snoozing", "snoozingBob", "bobEmotion"),
+                    createMenuItem("Super pleased", "super-pleasedBob", "bobEmotion"),
+                    createMenuItem("Surprised", "surprisedBob", "bobEmotion"),
+                    createMenuItem("Very surprised", "very-surprisedBob", "bobEmotion"),                    
+                    createMenuItem("Winking", "winkingBob", "bobEmotion"),
+
                     
-
-
-
 //change the conatiner to the thing just made
 
-d3.select("#popupContainer")
+// d3.select("#popupContainer")
 
-//Click event
+//Create click events
+//Bobs emotion clickers
+document.getElementById("angryBob").onclick= function() {
+    bobsEmotion = "angry"
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
+}
 
-// Make bob smile 
+document.getElementById("confusedBob").onclick= function() {
+    bobsEmotion = "confused"
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
+}
+
+document.getElementById("contentBob").onclick= function() {
+    bobsEmotion = "content"
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
+}
 
 document.getElementById("happyBob").onclick= function() {
+    bobsEmotion = "happy"
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
+}
+
+document.getElementById("joyBob").onclick= function() {
+    bobsEmotion = "joy"
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
+}
+
+document.getElementById("pleasedBob").onclick= function() {
+    bobsEmotion = "pleased"
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
+}
+
+document.getElementById("purringBob").onclick= function() {
     bobsEmotion = "purring"
-    plantDraw(4,bobsEmotion,"henk",bobSize)
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
 }
 
 document.getElementById("sadBob").onclick= function() {
     bobsEmotion = "sad"
-    plantDraw(4,bobsEmotion,"henk",bobSize)
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
 }
 
+document.getElementById("scepticalBob").onclick= function() {
+    bobsEmotion = "sceptical"
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
+}
+
+document.getElementById("smilingBob").onclick= function() {
+    bobsEmotion = "smiling"
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
+}
+
+document.getElementById("snoozingBob").onclick= function() {
+    bobsEmotion = "snoozing"
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
+}
+
+document.getElementById("super-pleasedBob").onclick= function() {
+    bobsEmotion = "super-pleased"
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
+}
+
+document.getElementById("surprisedBob").onclick= function() {
+    bobsEmotion = "surprised"
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
+}
+
+document.getElementById("very-surprisedBob").onclick= function() {
+    bobsEmotion = "very-surprised"
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
+}
+
+document.getElementById("winkingBob").onclick= function() {
+    bobsEmotion = "winking"
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
+}
+
+//UI switcher
 document.getElementById("planner").onclick= function() {
-    drawPlanner();
+    drawPlanner(selectedDate)
 }
 
 document.getElementById("active").onclick= function() {
-    drawActive();
-}
+    drawActive(selectedDate)
+} 
 
+//
 document.getElementById("b1").onclick= function() {
-    plantDraw(1,bobsEmotion,"henk",bobSize)
+    bobType = 1
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
 }
 document.getElementById("b2").onclick= function() {
-    plantDraw(2,bobsEmotion,"henk",bobSize)
+    bobType = 2
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
 }
 document.getElementById("b3").onclick= function() {
-    plantDraw(3,bobsEmotion,"henk",bobSize)
+    bobType = 3
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
 }
 document.getElementById("b4").onclick= function() {
-    plantDraw(4,bobsEmotion,"henk",bobSize)
+    bobType = 4
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
 }
 document.getElementById("b5").onclick= function() {
-    plantDraw(5,bobsEmotion,"henk",bobSize)
+    bobType = 5
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
 }
 document.getElementById("b6").onclick= function() {
-    plantDraw(6,bobsEmotion,"henk",bobSize)
+    bobType = 6
+    plantDraw(bobType,bobsEmotion,"henk",bobSize)
+}
+document.getElementById("15-11-2021").onclick= function() {
+    selectedDate = "15-11-2021";
 }
 
-    
+document.getElementById("16-11-2021").onclick= function() {
+    selectedDate = "16-11-2021";
+}
 
 
+//create Title card
+d3.select("#app")
+    .append("h2")
+    .attr("class","boldtext")
+    .attr("id","titlebox")
+    .text("Ahoy")
 
-
-
+ 

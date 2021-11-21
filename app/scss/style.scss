@@ -68,4 +68,15 @@ body {
   display:contents;
 }
 
+#menuContainer {
+  background-color:$industrial;
+}
 
+#menuMain {
+  margin-left:1em;
+}
+
+.menuItem {
+  display:inline-block;
+  padding: 0.2em;
+}

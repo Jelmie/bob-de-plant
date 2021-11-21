@@ -12,10 +12,10 @@ var x = d3.scaleTime()
           .nice();
 
 //Parse the selected date 
-selectedDate = parseDate(selectedDate);
+// selectedDate = parseDate(selectedDate);
 
 //THE DRAWING FUNCTION------------------------------------------------
-function drawActive() {
+function drawActive(date) {
 
 
     d3.select("#titlebox")
@@ -34,10 +34,8 @@ var svg = d3.select("#app")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")")
 
-
-
-       //CSV
-       d3.csv("data/calendar.csv").then(function(data) {
+           //CSV
+    d3.csv("data/calendars/"+date+".csv").then(function(data) {
 
         // format the data
         data.forEach(function(d) {
@@ -50,14 +48,7 @@ var svg = d3.select("#app")
         //---------------------------------Planner-----------------------------------//
         // Scale the range of the data in the domains
             y.domain(data.map(function(d) { return d.Locked; }));
-            //Planned domain
-            // x.domain(d3.extent( //Concat the Start and Einde to get the domain
-            //     [].concat(data.map(function (d) {
-            //         return (d.Start);
-            //     }), data.map(function (d) {
-            //         return (d.Einde);
-            //     })
-            // )));
+
     
             //Workhours domain
             x.domain([parseTime("8:00"), parseTime("21:00")])
@@ -71,7 +62,6 @@ var svg = d3.select("#app")
             .selectAll(".line")
             .data(data)
                 .enter()
-                .filter(function(d) { return d.close = selectedDate })
                     .append("g")//Create groups for all
                         .attr("class", "event")//Add class to group
                     g.append("line")//Add the line
@@ -100,7 +90,7 @@ var svg = d3.select("#app")
 
  // Load the data and do magic
 //Check whats selected
-function drawPlanner() {
+function drawPlanner(date) {
     //clear graph
     d3.selectAll("#app > svg").remove();
     d3.select("#titlebox")
@@ -119,7 +109,7 @@ var svg = d3.select("#app")
     //Split the canvas in 3
     
     //CSV
-    d3.csv("data/calendar.csv").then(function(data) {
+    d3.csv("data/calendars/"+date+".csv").then(function(data) {
 
     // format the data
     data.forEach(function(d) {
@@ -132,14 +122,6 @@ var svg = d3.select("#app")
     //---------------------------------First Block-----------------------------------//
     // Scale the range of the data in the domains
         y.domain(data.map(function(d) { return d.Locked; }));
-        //Planned domain
-        // x.domain(d3.extent( //Concat the Start and Einde to get the domain
-        //     [].concat(data.map(function (d) {
-        //         return (d.Start);
-        //     }), data.map(function (d) {
-        //         return (d.Einde);
-        //     })
-        // )));
 
         //Workhours domain
         x.domain([parseTime("8:00"), parseTime("12:00")])
@@ -153,8 +135,7 @@ var svg = d3.select("#app")
         .selectAll(".line")
         .data(data)
             .enter()
-            
-            .filter(function(d) { return d.close = selectedDate })
+
                 .append("g")//Create groups for all
                     .attr("class", "event")//Add class to group
                 g.append("line")//Add the line
@@ -183,14 +164,6 @@ var svg = d3.select("#app")
   //---------------------------------Second-----------------------------------//
     // Scale the range of the data in the domains
     y.domain(data.map(function(d) { return d.Locked; }));
-    //Planned domain
-    // x.domain(d3.extent( //Concat the Start and Einde to get the domain
-    //     [].concat(data.map(function (d) {
-    //         return (d.Start);
-    //     }), data.map(function (d) {
-    //         return (d.Einde);
-    //     })
-    // )));
 
     //Workhours domain
     x.domain([parseTime("12:00"), parseTime("16:00")])
@@ -238,14 +211,6 @@ var g =  svg //create a variable g to enter multiple children
       //---------------------------------Third-----------------------------------//
     // Scale the range of the data in the domains
     y.domain(data.map(function(d) { return d.Locked; }));
-    //Planned domain
-    // x.domain(d3.extent( //Concat the Start and Einde to get the domain
-    //     [].concat(data.map(function (d) {
-    //         return (d.Start);
-    //     }), data.map(function (d) {
-    //         return (d.Einde);
-    //     })
-    // )));
 
     //Workhours domain
     x.domain([parseTime("16:00"), parseTime("20:00")])
@@ -283,17 +248,6 @@ var g =  svg //create a variable g to enter multiple children
                 .attr("x", function(d) { return x(d.Start)})//Set x
 
         .exit()  
- //Draw Endtime
-        // svg.append("line") 
-        //     .attr("class","endLine")
-        //     .attr("x1","200")
-        //     .attr("x2","300")
-        //     .attr("y1",height/9*6)
-        //     .attr("y2",height/9*9)
-        
-    // add the y Axis
-    // svg.append("g")
-    //     .call(d3.axisLeft(y));
 
     // add the x Axis
     svg.append("g")
@@ -305,4 +259,4 @@ var g =  svg //create a variable g to enter multiple children
 
 
 //Run the draw function once
-// document.onload = drawActive()
+document.onload = drawPlanner(selectedDate)

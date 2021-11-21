@@ -1,5 +1,3 @@
-var bobsEmotion = "angry"
-var bobSize = "Medium"
 document.onLoad = d3.select("#app").append("div").attr("id","test");
 
 //plantDraw function
@@ -26,10 +24,10 @@ function plantDraw(pNum, emote, name, size)   {
     .attr("class", "plantElement pEmote")
 }   
 
-document.onload = plantDraw(pPot,bobsEmotion,"henk",bobSize)
+document.onload = plantDraw(bobType,bobsEmotion,"henk",bobSize)
 
 
 // //Bob actions
 // bobWantsAttention function() {
-    .text("Stop eens met werken!")
+    // .text("Stop eens met werken!")
 // }
